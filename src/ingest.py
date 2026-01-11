@@ -1,5 +1,6 @@
-import fitz 
+import fitz  # PyMuPDF
 from pptx import Presentation
+from docx import Document
 import os
 
 def load_pdf(file_path):
@@ -33,6 +34,19 @@ def load_pptx(file_path):
         print(f"Error reading PPTX {file_path}: {e}")
         return None
 
+def load_docx(file_path):
+    """Extracts text from a DOCX file."""
+    try:
+        doc = Document(file_path)
+        text = []
+        for i, para in enumerate(doc.paragraphs):
+            if para.text.strip():
+                text.append(para.text)
+        # Join with newlines
+        return "\n".join(text)
+    except Exception as e:
+        print(f"Error reading DOCX {file_path}: {e}")
+        return None
 
 def load_document(file_path):
     """Wrapper to detect file extension and call appropriate loader."""
@@ -42,11 +56,13 @@ def load_document(file_path):
         return load_pdf(file_path)
     elif ext == '.pptx':
         return load_pptx(file_path)
+    elif ext == '.docx':
+        return load_docx(file_path)
     else:
         print(f"Unsupported file format: {ext}")
         return None
 
-# Test the functions
+# --- Testing Block ---
 if __name__ == "__main__":
     print("Ingestion module loaded.")
     # file_path = "data/notes.docx"
