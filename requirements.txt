@@ -1,0 +1,21 @@
+# Document Processing
+pymupdf
+python-pptx
+
+# Text Processing & Embeddings
+nltk
+spacy
+sentence-transformers
+faiss-cpu
+numpy
+
+# LLM & API
+openai
+python-dotenv
+tiktoken
+
+# Web App & API
+fastapi
+uvicorn
+python-multipart
+streamlit
