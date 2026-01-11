@@ -1,6 +1,7 @@
 # Document Processing
 pymupdf
 python-pptx
+python-docx
 
 # Text Processing & Embeddings
 nltk
