@@ -4,16 +4,12 @@ python-pptx
 python-docx
 
 # Text Processing & Embeddings
-nltk
-spacy
 sentence-transformers
 faiss-cpu
 numpy
 
 # LLM & API
-openai
 python-dotenv
-tiktoken
 
 # Web App & API
 fastapi
